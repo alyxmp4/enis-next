@@ -1,0 +1,32 @@
+.navSkeleton {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  align-items: center;
+
+  .skeletonTitle {
+    width: 100px;
+    height: 20px;
+  }
+}
+
+.wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+@media (max-width: 850px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    width: 95%;
+  }
+}
