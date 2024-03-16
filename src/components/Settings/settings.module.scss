@@ -1,0 +1,42 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+
+  h2 {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+}
+
+.main {
+  margin-top: 1rem;
+  padding: 1rem;
+
+  .setting {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 1rem;
+
+    .name {
+      font-size: 1.5rem;
+    }
+
+    .description {
+      font-size: 0.95rem;
+      color: var(--secondary-foreground);
+      line-height: 1;
+      padding-right: 2rem;
+    }
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+}

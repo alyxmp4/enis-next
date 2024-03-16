@@ -1,0 +1,217 @@
+.journal {
+  width: 100%;
+  margin: 0 auto;
+
+  max-width: 780px;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 500px;
+
+    .empty {
+      margin: 0 auto;
+
+      width: 450px;
+
+      .description {
+        margin-top: 0.5rem;
+        color: var(--secondary-foreground);
+      }
+
+      h1, p {
+        line-height: normal;
+      }
+
+      img {
+        margin: 0 auto;
+      }
+
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  padding-bottom: 7rem;
+}
+
+@media (max-width: 800px) {
+  .journal {
+    width: 85%;
+
+    .container {
+      .empty {
+        width: 50%;
+        min-width: 290px;
+
+        h1 {
+          font-size: 1.75rem;
+        }
+
+        .description {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .journal {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .journal {
+    width: 100%;
+
+    .container {
+      .empty {
+        width: 80%;
+        min-width: 290px;
+
+        img {
+          width: 100px;
+          height: 100px;
+        }
+
+        h1 {
+          font-size: 1.55rem;
+        }
+
+        .description {
+          font-size: 0.9rem;
+        }
+      }
+
+      .journalItems {
+        margin-top: 1rem;
+
+        .journalItem {
+          .score {
+            .percent {
+              font-size: 1.35rem;
+            }
+
+            .mark {
+              font-size: 1.35rem;
+
+              span {
+                  font-size: 0.9rem;
+              }
+            }
+          }
+
+          .content {
+            .subject {
+              font-size: 1.35rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.journalItems {
+  margin-top: 1.75rem;
+
+  width: 100%;
+
+  .journalItem {
+    height: fit-content;
+    width: 100%;
+
+    margin-bottom: 0.75rem;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+      background: var(--secondary-hover);
+    }
+
+    .score {
+      margin-top: 0.65rem;
+      margin-bottom: 0.65rem;
+
+      color: var(--secondary-foreground);
+
+      display: flex;
+      flex-direction: row;
+
+      justify-content: space-between;
+
+      .percent {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .mark {
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        span {
+          font-size: 1rem;
+          font-weight: normal;
+        }
+      }
+    }
+
+    .content {
+      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      .subject {
+        font-size: 1.5rem;
+
+        transition: 0.2s ease-in-out;
+
+        .angle {
+          vertical-align: middle;
+          transition: 0.2s ease-in-out;
+
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    &:hover {
+      .subject {
+        color: var(--accent);
+
+        .angle {
+          transform: translateX(5px);
+          color: var(--accent);
+        }
+      }
+    }
+
+    .progress {
+      width: 100%;
+      height: 4px;
+
+      border-radius: 0 0 1px 1px;
+
+      transition: 0.35s all ease-in-out;
+    }
+
+    background: var(--secondary-background);
+  }
+}
