@@ -215,3 +215,34 @@
     background: var(--secondary-background);
   }
 }
+
+.error {
+  margin: 0 auto;
+  text-align: center;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 330px;
+
+  .image {
+    margin: 0 auto;
+  }
+
+  .head {
+    line-height: 1;
+
+    margin-top: 1rem;
+  }
+
+  .desc {
+    color: var(--secondary-foreground);
+    line-height: 1;
+    margin-top: 0.5rem;
+  }
+}

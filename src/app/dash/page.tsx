@@ -7,6 +7,7 @@ import { getJournal } from '@/features/journal/getJournal'
 import { decompressToken } from '@/shared/utils/tokens/tokenCompressor'
 import { type Metadata } from 'next'
 import { resolveAccessToken } from '@/shared/utils/misc/accessTokenResolver'
+import JournalEmpty from '@/components/Journal/JournalEmpty'
 
 export const metadata: Metadata = {
   title: 'enis next | дневник',
@@ -22,13 +23,17 @@ const Page = async () => {
   )
   const UserInfo = JSON.parse(stringifiedUserInfo) as unknown as Userinfo
 
-  const journal = await getJournal(accessToken, city!, UserInfo.PersonGid)
+  try {
+    const journal = await getJournal(accessToken, city!, UserInfo.PersonGid)
 
-  return (
-    <div>
-      <Journal journal={journal} />
-    </div>
-  )
+    return (
+      <div>
+        <Journal journal={journal} />
+      </div>
+    )
+  } catch (e) {
+    return <JournalEmpty />
+  }
 }
 
 export default Page
